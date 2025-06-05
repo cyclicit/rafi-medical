@@ -108,6 +108,16 @@ function App() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [isMenuOpen]);
+   
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTab]);
+
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   return (
     <div className="App">
@@ -156,11 +166,7 @@ function App() {
                 যোগাযোগ
               </li>
             </ul>
-            <div className="nav-booking-btn">
-              <button className="btn-small" onClick={() => { setActiveTab('booking'); setIsMenuOpen(false); }}>
-                বুকিং করুন
-              </button>
-            </div>
+           
           </nav>
         </div>
       </header>
