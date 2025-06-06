@@ -197,6 +197,66 @@ function App() {
                 </div>
               </section>
 
+              <section className="doctors-preview">
+                <div className="section-header">
+                  <h2 className="section-title">আমাদের বিশেষজ্ঞ ডাক্তারবৃন্দ</h2>
+                  <p className="section-subtitle">অভিজ্ঞ ডাক্তারদের সাথে আপনার চিকিৎসা</p>
+                </div>
+                <div className="doctors-slider">
+                  {doctors.slice(0, 3).map((doctor) => (
+                    <div className="doctor-card" key={doctor.id}>
+                      <div className="doctor-image">
+                        <img src={doctor.image} alt={doctor.name} />
+                      </div>
+                      <div className="doctor-info">
+                        <h3>{doctor.name}</h3>
+                        <p className="specialty">{doctor.specialty}</p>
+                        <button 
+                          className="btn-small"
+                          onClick={() => {
+                            setActiveTab('doctors');
+                          }}
+                        >
+                          বিস্তারিত দেখুন
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="view-all">
+                  <button className="btn-secondary" onClick={() => setActiveTab('doctors')}>
+                    সব ডাক্তার দেখুন →
+                  </button>
+                </div>
+              </section>
+
+
+               <section className="equipment-section">
+                <div className="section-header">
+                  <h2 className="section-title">আমাদের মেডিকেল যন্ত্রপাতি</h2>
+                  <p className="section-subtitle">সর্বাধুনিক চিকিৎসা সরঞ্জাম</p>
+                </div>
+                <div className="equipment-grid">
+                  {medicalEquipment.map((equip, index) => (
+                    <div className="equipment-card" key={index}>
+                      <div className="equipment-image">
+                        <img src={equip} alt={`Medical Equipment ${index + 1}`} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section className="cta-section">
+                <div className="cta-content">
+                  <h2>আজই আপনার অ্যাপয়েন্টমেন্ট বুক করুন</h2>
+                  <p>সর্বোচ্চ মানের চিকিৎসা সেবা পেতে এখনই বুকিং করুন</p>
+                  <button className="btn-small" onClick={() => setActiveTab('booking')}>
+                    বুকিং করুন
+                  </button>
+                </div>
+              </section>
+
               <section className="features-section">
                 <div className="section-header">
                   <h2 className="section-title">আমাদের বিশেষ সুবিধাসমূহ</h2>
@@ -234,64 +294,9 @@ function App() {
                 </div>
               </section>
 
-              <section className="doctors-preview">
-                <div className="section-header">
-                  <h2 className="section-title">আমাদের বিশেষজ্ঞ ডাক্তারবৃন্দ</h2>
-                  <p className="section-subtitle">অভিজ্ঞ ডাক্তারদের সাথে আপনার চিকিৎসা</p>
-                </div>
-                <div className="doctors-slider">
-                  {doctors.slice(0, 3).map((doctor) => (
-                    <div className="doctor-card" key={doctor.id}>
-                      <div className="doctor-image">
-                        <img src={doctor.image} alt={doctor.name} />
-                      </div>
-                      <div className="doctor-info">
-                        <h3>{doctor.name}</h3>
-                        <p className="specialty">{doctor.specialty}</p>
-                        <button 
-                          className="btn-small"
-                          onClick={() => {
-                            setActiveTab('doctors');
-                          }}
-                        >
-                          বিস্তারিত দেখুন
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="view-all">
-                  <button className="btn-secondary" onClick={() => setActiveTab('doctors')}>
-                    সব ডাক্তার দেখুন →
-                  </button>
-                </div>
-              </section>
+              
 
-              <section className="equipment-section">
-                <div className="section-header">
-                  <h2 className="section-title">আমাদের মেডিকেল যন্ত্রপাতি</h2>
-                  <p className="section-subtitle">সর্বাধুনিক চিকিৎসা সরঞ্জাম</p>
-                </div>
-                <div className="equipment-grid">
-                  {medicalEquipment.map((equip, index) => (
-                    <div className="equipment-card" key={index}>
-                      <div className="equipment-image">
-                        <img src={equip} alt={`Medical Equipment ${index + 1}`} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section className="cta-section">
-                <div className="cta-content">
-                  <h2>আজই আপনার অ্যাপয়েন্টমেন্ট বুক করুন</h2>
-                  <p>সর্বোচ্চ মানের চিকিৎসা সেবা পেতে এখনই বুকিং করুন</p>
-                  <button className="btn-primary" onClick={() => setActiveTab('booking')}>
-                    বুকিং করুন
-                  </button>
-                </div>
-              </section>
+             
             </>
           )}
 
